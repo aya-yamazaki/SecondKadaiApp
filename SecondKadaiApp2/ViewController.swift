@@ -8,12 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var label: UIButton!
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+   }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNext" {
+            let nextView = segue.destination as! ResultViewController
+            nextView.nameData = nameTextField.text!
     }
-
-
+ }
 }
-
